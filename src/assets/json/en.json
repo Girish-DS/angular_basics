@@ -1,0 +1,15 @@
+{
+    "button": {
+        "logout": "Logout",
+        "signup": "Sign up",
+        "signin": "Sign in",
+        "createUser": "Create User",
+        "updateUser": "Update User",
+        "editUser": "Edit User"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "home": "Home",
+        "settings": "Settings"
+    }
+}

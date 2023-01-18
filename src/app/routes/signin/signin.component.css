@@ -1,0 +1,56 @@
+.signup-component {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/images/images.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    height: fit-content;
+    width: 25%;
+    background-color: rgb(255 255 255 / 39%);
+    border-radius: 5px;
+}
+
+.cred {
+    display: grid;
+    gap: 30px;
+    padding: 35px 30px;
+}
+
+.input {
+    width: 100%;
+    display: grid;
+}
+  
+input {
+    width: 100%;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.header {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.submit {
+    height: 30px;
+    width: 65px;
+    border: 1px solid;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}

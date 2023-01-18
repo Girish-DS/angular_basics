@@ -1,0 +1,31 @@
+<div class="addEdit-container">
+  <div class="header">
+    <div class="title">
+      <label *ngIf="!edit">Create User</label>
+      <label *ngIf="edit">Edit User</label>
+    </div>
+    <div class="button">
+      <button type="button" class="close" (click)="close()">close</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="body">
+      <div>
+        <label>Name</label>
+        <input class="input" type="text" [(ngModel)]="name">
+      </div>
+      <div>
+        <label>Phone Number</label>
+        <input class="input" type="text" [(ngModel)]="phoneNumber">
+      </div>
+      <div>
+        <label>Age</label>
+        <input class="input" type="text" [(ngModel)]="age">
+      </div>
+    </div>
+    <div class="save-btn">
+      <button *ngIf="!edit" class="create-btn" (click)="saveUser(true)">Create</button>
+      <button *ngIf="edit" class="edit-btn" (click)="saveUser(false)">Edit</button>
+    </div>
+  </div>
+</div>
