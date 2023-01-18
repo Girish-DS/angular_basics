@@ -1,0 +1,13 @@
+<div class="warning-container">
+  <div class="warning-message">
+    <h3>Are you sure, you want to delete <span style="font-size: larger">{{customer.name}}</span></h3>
+  </div>
+  <div class="decisions-btns">
+    <div class="yes-btn">
+      <button class="true" type="button" (click)="delete(true)">Yes</button>
+    </div>
+    <div class="no-btn">
+      <button class="false" type="button" (click)="delete(false)">No</button>
+    </div>
+  </div>
+</div>

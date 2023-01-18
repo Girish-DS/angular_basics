@@ -1,0 +1,27 @@
+<div class="sidebar-container">
+  <nav class="nav" onmouseenter="">
+    <div><img src="assets/svg/house.svg"></div>
+    <div class="sidebar-content">
+      <ul>
+        <li class="list" [routerLinkActive]="['active']">
+          <a [routerLink]="['dashboard']">
+            <img class="settings" src="assets/svg/speedometer2.svg">
+            <span class="tit">Dashboard</span>
+          </a>
+        </li>
+        <li class="list" [routerLinkActive]="['active']">
+          <a [routerLink]="['home']">
+            <img class="home" src="assets/svg/house.svg">
+            <span class="tit">Home</span>
+          </a>
+        </li>
+        <li class="list" [routerLinkActive]="['active']">
+          <a [routerLink]="['settings']">
+            <img class="settings" src="assets/svg/gear.svg">
+            <span class="tit">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

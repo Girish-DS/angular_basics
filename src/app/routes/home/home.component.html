@@ -1,0 +1,39 @@
+<div class="home-container">
+  <!-- Added the container and template to use another component in this page which don't have parent child relation -->
+  <ng-container *ngIf="userslist; else createOrEditUser">
+    <!-- We can use only the code which is in container to execute the same view -->
+    <div class="header">
+      <div class="title">
+        <!-- Custom Directive "appCustomDirective" -->
+        <label appCustomDirective>Users List</label>
+      </div>
+      <div class="create">
+        <button type="button" class="new-user" (click)="createCustomer()">New User</button>
+      </div>
+    </div>
+    <div class="table overflow:auto  text-center sm:">
+      <div class="table-body row align-items-start">
+        <thead>
+        <tr>
+          <th *ngFor="let head of header">{{head.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of customerDetails">
+          <td>{{data.name}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.phoneNumber}}</td>
+          <td>
+            <button type="button" class="edit-btn" (click)="editCustomer(data)">Edit</button>
+            <button type="button" class="delete-btn" (click)="deleteCustomer(data)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #createOrEditUser>
+    <!-- A component with no relation -->
+    <app-add-or-edit [initdata]="customer" [edit]="edit" (output)="getUsersList()"></app-add-or-edit>
+  </ng-template>
+</div>

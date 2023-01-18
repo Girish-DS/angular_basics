@@ -1,0 +1,23 @@
+<div class="login-container">
+  <div class="content">
+    <div class="header">
+      <div class="title">
+      <h1>LOGIN</h1>
+      </div>
+    </div>
+    <div class="login-form">
+      <div class="input">
+        <span>Email</span>
+        <input class="email" type="text" [(ngModel)]="email">
+      </div>
+      <div class="input">
+        <span>Password</span>
+        <input class="pwd" type="text" [(ngModel)]="password">
+      </div>
+      <div class="submit-btn">
+        <button class="submit" type="button" (click)="signUp()">Signup</button>
+        <button class="submit" type="submit" (click)="submit()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
