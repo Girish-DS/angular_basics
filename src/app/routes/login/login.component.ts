@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, inject, Inject, Injector, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { ToastrService as ToasterService, ToastrService } from 'ngx-toastr';
+import { BaseComponent } from 'src/app/base_component';
 
 
 @Component({
@@ -7,28 +9,43 @@ import {Router} from "@angular/router";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseComponent implements OnInit {
 
-  public email: any;
-  public password: any;
+  public email: string = '';
+  public password: string = '';
 
-  constructor( private router: Router) { }
+  constructor( private router: Router,
+    public toaster: ToasterService,
+    private inject: Injector
+    ) {
+      super(inject);
+    }
 
   ngOnInit(): void {
   }
 
+  getClass() {
+    if (this.email && this.password) {
+      return 'submit';
+    }
+    return 'not_submit';
+  }
+
   submit() {
+    this.toaster.error('Error','Invalid Email or Password');
+
     if (this.email && this.password) {
       let data: any = localStorage.getItem(this.email);
       let admin = JSON.parse(data);
       if ((this.email === admin.email) && (this.password === admin.password)) {
         this.router.navigate(['admin/home']);
       } else {
-        alert('Invalid Email or Password');
+        this.toaster.error('Error','Invalid Email or Password');
       }
     } else {
-      alert('Invalid Email or Password');
+      this.toaster.success('Error','Invalid Email or Password');
     }
+
   }
 
   signUp() {

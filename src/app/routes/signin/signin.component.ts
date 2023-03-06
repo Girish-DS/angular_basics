@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
             email: this.email,
             password: this.password
           };
-          localStorage.setItem(this.email, JSON.stringify(data));
+          sessionStorage.setItem(this.email, JSON.stringify(data));   
           // localStorage.clear()
           this.router.navigate(['auth/login']);
         } else {
