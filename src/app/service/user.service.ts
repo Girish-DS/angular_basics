@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Customer} from "../models/customer";
+import { Customer } from "../models/customer";
+import { HttpClient } from '@angular/common/http';
+import { API } from '../constant';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +15,12 @@ export class UserService {
     }
   ];
 
-  constructor() { }
+  constructor ( private http: HttpClient ) {}
 
-  getUsersList() {
-    return this.customer;
+  getUsersList(): Observable<any> {
+    // return this.customer;
+    return this.http.get(API.allUsers);
+
   }
 
   addCustomer(data: Customer) {

@@ -15,8 +15,8 @@
         <input class="pwd" type="text" [(ngModel)]="password">
       </div>
       <div class="submit-btn">
-        <button class="submit" type="button" (click)="signUp()">Signup</button>
-        <button class="submit" type="submit" (click)="submit()">Login</button>
+        <button class="btn not_submit" type="button" (click)="signUp()">Signup</button>
+        <button class="btn" [ngClass]="getClass()" type="submit" (click)="submit()">Login</button>
       </div>
     </div>
   </div>

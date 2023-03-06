@@ -42,14 +42,17 @@ export class HomeComponent implements OnInit {
      * data is getting from the service file
      **/ 
 
-    this.customerDetails = this.userService.getUsersList();
+    this.userService.getUsersList().subscribe( res => {
+      console.log(res);
+      this.customerDetails = res;
+    });
     this.userslist = true;
     this.edit = false;
   }
 
   createCustomer() {
     /*
-    * We can use the rputer.navigate to get the edit view, instead of exporting the addOrEditComponent.
+    * We can use the router.navigate to get the edit view, instead of exporting the addOrEditComponent.
     this.router.navigate(['admin/add'], {queryParams: {data: '', edit: false}});
     */
 
