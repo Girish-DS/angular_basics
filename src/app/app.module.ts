@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminComponent } from './layout/admin/admin.component';
 import { AuthComponent } from './layout/auth/auth.component';
-import {SidebarComponent} from "./components/sidebar/sidebar.component";
-import {NavbarComponent} from "./components/navbar/navbar.component";
-import {UserService} from "./service/user.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {MatDialog, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {AddOrEditModule} from "./components/add-or-edit/add-or-edit.module";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { UserService } from "./service/user.service";
+import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material/dialog";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AddOrEditModule } from "./components/add-or-edit/add-or-edit.module";
 import { WarningComponent } from './components/warning/warning.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,11 @@ import { WarningComponent } from './components/warning/warning.component';
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    AddOrEditModule
+    AddOrEditModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      progressBar: true
+  })
   ],
   providers: [UserService,],
   bootstrap: [AppComponent]
