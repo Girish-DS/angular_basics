@@ -1,12 +1,16 @@
+.sidebar-container {
+  width: 100%;
+}
+
 nav {
-  background: rgba(2 24 13 / 45%);
+  background: rgb(159 159 159);
   padding: 10px 20px;
   height: 100vh;
 }
 
 span {
   width: 100vw !important;
-  font-family:'Bahnschrift' !important;
+  font-family: OCR A Std, monospace;
   color: white !important;
 }
 

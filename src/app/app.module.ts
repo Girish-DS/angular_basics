@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AddOrEditModule } from "./components/add-or-edit/add-or-edit.module";
 import { WarningComponent } from './components/warning/warning.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedService } from './shared.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true
   })
   ],
-  providers: [UserService,],
+  providers: [UserService, SharedService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
