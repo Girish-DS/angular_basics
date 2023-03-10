@@ -8,6 +8,10 @@ nav {
   height: 100vh;
 }
 
+a {
+  text-decoration: none;
+}
+
 span {
   width: 100vw !important;
   font-family: OCR A Std, monospace;
@@ -15,13 +19,14 @@ span {
 }
 
 li {
-  display: grid;
+  display: flex;
   padding: 10px 0px;
 }
 
 li :hover {
   background-color: rgba(7, 7, 7, 20%);
   padding: 13px 0px;
+  background: transparent;
 }
 
 li :active {
@@ -30,6 +35,6 @@ li :active {
 }
 
 .active {
-  background-color: rgba(7, 7, 7, 0.445);
+  background-color: rgba(7, 7, 7, 0.252); 
   padding: 15px 0px;
 }
