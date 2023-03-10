@@ -1,6 +1,7 @@
 .navbar-container {
-  background: rgb(13 6 74 / 55%);
+  background: rgb(104 104 104);
   padding: 10px 20px;
+  font-family: OCR A Std, monospace;
   align-items: center;
   display: flex;
   justify-content: space-between;
