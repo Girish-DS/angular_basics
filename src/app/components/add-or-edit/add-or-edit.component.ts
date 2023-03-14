@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-add-or-edit',
   templateUrl: './add-or-edit.component.html',
-  styleUrls: ['./add-or-edit.component.css']
+  styleUrls: ['./add-or-edit.component.scss']
 })
 export class AddOrEditComponent implements OnInit {
 
@@ -13,7 +13,7 @@ export class AddOrEditComponent implements OnInit {
    * These are Property Decorators, Where "Input" gets the value from a component.
    * "Output" emits/returns the value from this component to another. 
    */
-  @Input() initdata: any;
+  @Input() inItData: any;
   @Input() edit: any;
   @Output() output = new EventEmitter();
 
@@ -47,11 +47,11 @@ export class AddOrEditComponent implements OnInit {
      */
     
     // Data got from the Property Decorator "Input".
-    if (this.initdata) {
-      this.id = this.initdata.id;
-      this.name = this.initdata.name;
-      this.age = this.initdata.age;
-      this.phoneNumber = this.initdata.phoneNumber;
+    if (this.inItData) {
+      this.id = this.inItData.id;
+      this.name = this.inItData.name;
+      this.age = this.inItData.age;
+      this.phoneNumber = this.inItData.phoneNumber;
     }
   }
 

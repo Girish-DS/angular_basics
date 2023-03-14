@@ -8,6 +8,6 @@ export class CustomDirectiveDirective implements OnInit{
   constructor(private ele: ElementRef, private render: Renderer2) {}
 
   ngOnInit(): void {
-    this.render.setStyle(this.ele.nativeElement, 'color', 'red');
+    this.render.setStyle(this.ele.nativeElement, 'color', 'black');
   }
 }
