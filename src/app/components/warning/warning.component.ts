@@ -5,7 +5,7 @@ import {UserService} from "../../service/user.service";
 @Component({
   selector: 'app-warning',
   templateUrl: './warning.component.html',
-  styleUrls: ['./warning.component.css']
+  styleUrls: ['./warning.component.scss']
 })
 export class WarningComponent implements OnInit {
 
