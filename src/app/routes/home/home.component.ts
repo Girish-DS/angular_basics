@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from "../../service/user.service";
 import { SharedService } from "../../shared.service"
 
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   public header = [
     { name: 'Name' },
     { name: 'Age' },
-    { name: 'Phone Number' },
+    { name: 'Phone' },
     { name: 'Action' },
   ];
 
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
    * Router is used to navigate from one module/component to another
    **/
   constructor(
+    private toaster: ToastrService,
     private sharedService: SharedService,
     public userService: UserService,
     ) { }
@@ -46,17 +48,20 @@ export class HomeComponent implements OnInit {
     /**
      * data is getting from the service file
      **/ 
-    this.userService.getUsersList().subscribe( res => {
+    this.userService.getUsersList().subscribe( (res: any) => {
       
       if (res) {
         this.customerTrue = true;
         this.customerDetails = res;
       }
 
-      this.customerTrue = false;
+      // this.customerTrue = false;
 
     }, err => {
-      console.log(err);      
+      this.toaster.error('Back-end not connect', 'Error')
+      console.log(err);
+      this.customerTrue = true;
+      this.customerDetails = this.userService.customer;      
     });
 
     this.usersList = true;
