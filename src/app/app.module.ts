@@ -14,7 +14,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AddOrEditModule } from "./components/add-or-edit/add-or-edit.module";
 import { WarningComponent } from './components/warning/warning.component';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { SharedService } from './shared.service';
 
 
@@ -41,7 +41,7 @@ import { SharedService } from './shared.service';
       progressBar: true
   })
   ],
-  providers: [UserService, SharedService],
+  providers: [UserService, SharedService, ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

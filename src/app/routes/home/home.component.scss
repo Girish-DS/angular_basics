@@ -1,9 +1,18 @@
 .home-container {
   width: 100%;
+  height: 95vh;
+  padding: 10px;
+  // background-image: url(../../../assets/images/5137894.jpg);
+  // background-repeat: no-repeat;
+  background-size: cover;
+  font-family: OCR A Std, monospace;
 
   .header {
     display: flex;
     justify-content: space-between;
+    border-bottom: groove;
+    margin: 10px;
+    padding: 5px;
   }
 
   .table {
@@ -11,11 +20,14 @@
     .table-body {
 
       .table-head {
-        border-style: dashed;
+        background-color: dimgray;
+        // border-radius: 5%;
+        // border-style: dashed;
       }
 
       .table-content {
-        border-style: initial;
+        // border-style: initial;
+        // color: white;
       }
 
     }

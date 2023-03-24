@@ -15,12 +15,19 @@
         <input class="input" type="text" [(ngModel)]="name">
       </div>
       <div>
-        <label>Phone Number</label>
+        <label>Phone</label>
         <input class="input" type="text" [(ngModel)]="phoneNumber">
       </div>
       <div>
         <label>Age</label>
         <input class="input" type="text" [(ngModel)]="age">
+      </div>
+      <div>
+        <label>Sex</label>
+        <select class="input" placeholder="Select">
+          <option disabled>Select</option>
+          <option *ngFor="let gen of sex">{{gen}}</option>
+        </select>
       </div>
     </div>
     <div class="save-btn">

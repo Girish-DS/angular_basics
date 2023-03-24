@@ -11,6 +11,7 @@ import { BaseComponent } from 'src/app/base_component';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
+  public emails = ['User 1', 'User 2'];
   public email: string = '';
   public password: string = '';
 

@@ -17,6 +17,8 @@ export class AddOrEditComponent implements OnInit {
   @Input() edit: any;
   @Output() output = new EventEmitter();
 
+  public sex = ['Male', 'Female', 'Others'];
+
   public customerDetails: any;
   public name = '';
   public phoneNumber = '';

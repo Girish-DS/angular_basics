@@ -11,11 +11,13 @@
         <button type="button" class="new-user" (click)="createCustomer()">New User</button>
       </div>
     </div>
-    <div class="table overflow:auto  text-center sm:">
-      <div class="table-body row align-items-start">
+    <div class="table">
+      <div class="table-body">
         <thead class="table-head">
         <tr>
-          <th *ngFor="let head of header">{{head.name}}</th>
+          <th *ngFor="let head of header">
+            <span class="head">{{head.name}}</span>
+          </th>
         </tr>
         </thead>
         <tbody class="table-content">
