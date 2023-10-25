@@ -37,8 +37,8 @@ import { SharedService } from './shared.service';
     BrowserAnimationsModule,
     AddOrEditModule,
     ToastrModule.forRoot({
-      timeOut: 2000,
-      progressBar: true
+      // timeOut: 2000,
+      // progressBar: true
   })
   ],
   providers: [UserService, SharedService, ToastrService],

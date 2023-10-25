@@ -8,12 +8,16 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class SettingsComponent implements OnInit {
 
+  public share = {};
+
   constructor(
-    private shareService: SharedService,
+    private sharedService: SharedService,
   ) { }
 
   ngOnInit(): void {
-    this.shareService.shareData('SERVICE');
+    this.sharedService.shareData('SERVICE');
+
+    this.share = this.sharedService.obj;
   }
 
 }

@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
     { name: 'Action' },
   ];
 
+  public str: any;
+  public options = ['user 1', 'user 2', 'user 3', 'user 4', 'user 5'];
   public customerDetails: any;
   public customerTrue: boolean = true;
   public usersList: boolean = true;
@@ -82,7 +84,7 @@ export class HomeComponent implements OnInit {
 
   editCustomer(customer: any) {
     /*
-    * We can use the rputer.navigate to get the edit view, instead of exporting the addOrEditComponent.
+    * We can use the router.navigate to get the edit view, instead of exporting the addOrEditComponent.
     this.router.navigate(['admin/edit'], {queryParams: {data: JSON.stringify(customer), edit: true}});
     */
 

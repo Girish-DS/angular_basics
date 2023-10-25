@@ -4,7 +4,18 @@ import { Subject } from "rxjs";
 @Injectable()
 export class SharedService {
 
-    content = new Subject<any> ();
+    constructor() {
+        setTimeout(() => {
+            this.obj['name'] = 'hsdvwe'
+        }, 5000)
+    }
+
+    content = new Subject<any>();
+
+    public obj = {
+        name: 'Venkat',
+        role: 'developer'
+    }
 
     shareData(message: any) {
         this.content.next(message);

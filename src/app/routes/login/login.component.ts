@@ -17,7 +17,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   constructor( private router: Router,
     public toaster: ToasterService,
-    private inject: Injector
+    private inject: Injector 
     ) {
       super(inject);
     }

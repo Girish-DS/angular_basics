@@ -5,6 +5,7 @@ import {HomeComponent} from "./home.component";
 import { CustomDirectiveDirective } from 'src/app/directives/custom-directive.directive';
 import { AddOrEditModule } from 'src/app/components/add-or-edit/add-or-edit.module';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     AddOrEditModule,
+    FormsModule,
     RouterModule.forChild(routes),
     ToastrModule.forRoot(),
   ],
