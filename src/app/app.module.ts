@@ -14,7 +14,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AddOrEditModule } from "./components/add-or-edit/add-or-edit.module";
 import { WarningComponent } from './components/warning/warning.component';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { SharedService } from './shared.service';
 
 
 @NgModule({
@@ -36,11 +37,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     AddOrEditModule,
     ToastrModule.forRoot({
-      timeOut: 2000,
-      progressBar: true
+      // timeOut: 2000,
+      // progressBar: true
   })
   ],
-  providers: [UserService,],
+  providers: [UserService, SharedService, ToastrService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

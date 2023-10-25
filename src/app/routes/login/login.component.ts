@@ -7,16 +7,17 @@ import { BaseComponent } from 'src/app/base_component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
+  public emails = ['User 1', 'User 2'];
   public email: string = '';
   public password: string = '';
 
   constructor( private router: Router,
     public toaster: ToasterService,
-    private inject: Injector
+    private inject: Injector 
     ) {
       super(inject);
     }

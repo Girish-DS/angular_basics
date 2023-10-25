@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from "../../service/user.service";
-import { Router } from "@angular/router";
+import { SharedService } from "../../shared.service"
 
 /**
  * @Component is a class decorator / 
@@ -8,7 +9,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -16,12 +17,15 @@ export class HomeComponent implements OnInit {
   public header = [
     { name: 'Name' },
     { name: 'Age' },
-    { name: 'Phone Number' },
+    { name: 'Phone' },
     { name: 'Action' },
   ];
 
+  public str: any;
+  public options = ['user 1', 'user 2', 'user 3', 'user 4', 'user 5'];
   public customerDetails: any;
-  public userslist: boolean = true;
+  public customerTrue: boolean = true;
+  public usersList: boolean = true;
   public customer: any;
   public edit: boolean = false;
 
@@ -29,10 +33,15 @@ export class HomeComponent implements OnInit {
    * UserService is used for the API call or data transfer
    * Router is used to navigate from one module/component to another
    **/
-  constructor( public userService: UserService, private router: Router ) { }
+  constructor(
+    private toaster: ToastrService,
+    private sharedService: SharedService,
+    public userService: UserService,
+    ) { }
 
   ngOnInit(): void {
-    this.userslist = true;
+    this.sharedService.shareData('HOME');
+    this.usersList = true;
     this.edit = false;
     this.getUsersList();
   }
@@ -41,12 +50,23 @@ export class HomeComponent implements OnInit {
     /**
      * data is getting from the service file
      **/ 
+    this.userService.getUsersList().subscribe( (res: any) => {
+      
+      if (res) {
+        this.customerTrue = true;
+        this.customerDetails = res;
+      }
 
-    this.userService.getUsersList().subscribe( res => {
-      console.log(res);
-      this.customerDetails = res;
+      // this.customerTrue = false;
+
+    }, err => {
+      this.toaster.error('Back-end not connect', 'Error')
+      console.log(err);
+      this.customerTrue = true;
+      this.customerDetails = this.userService.customer;      
     });
-    this.userslist = true;
+
+    this.usersList = true;
     this.edit = false;
   }
 
@@ -58,19 +78,19 @@ export class HomeComponent implements OnInit {
 
     // This is used for the exported component.
     this.customer = "";
-    this.userslist = false;
+    this.usersList = false;
     this.edit = false;
   }
 
   editCustomer(customer: any) {
     /*
-    * We can use the rputer.navigate to get the edit view, instead of exporting the addOrEditComponent.
+    * We can use the router.navigate to get the edit view, instead of exporting the addOrEditComponent.
     this.router.navigate(['admin/edit'], {queryParams: {data: JSON.stringify(customer), edit: true}});
     */
 
     // This is used for the exported component.
     this.customer = customer;
-    this.userslist = false;
+    this.usersList = false;
     this.edit = true;
   }
 
